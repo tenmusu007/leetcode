@@ -1,32 +1,32 @@
-class ListNode {
-	val: number;
-	next: ListNode | null;
-	constructor(val?: number, next?: ListNode | null) {
-		this.val = val === undefined ? 0 : val;
-		this.next = next === undefined ? null : next;
-	}
-}
-const getVal = (list: ListNode | null): number[] => {
-	if (!list) return [];
-	return [list.val, ...getVal(list.next)];
-};
-function deleteDuplicates(head: ListNode | null): ListNode | null {
-	if (!head) return null;
-	const arr = getVal(head);
+// class ListNode {
+// 	val: number;
+// 	next: ListNode | null;
+// 	constructor(val?: number, next?: ListNode | null) {
+// 		this.val = val === undefined ? 0 : val;
+// 		this.next = next === undefined ? null : next;
+// 	}
+// }
+// const getVal = (list: ListNode | null): number[] => {
+// 	if (!list) return [];
+// 	return [list.val, ...getVal(list.next)];
+// };
+// function deleteDuplicates(head: ListNode | null): ListNode | null {
+// 	if (!head) return null;
+// 	const arr = getVal(head);
 
-	const sortedArr = Array.from(new Set(arr));
+// 	const sortedArr = Array.from(new Set(arr));
 
-	let result: ListNode | null = null;
-	for (const x of sortedArr) {
-		result = new ListNode(x, result);
-		console.log("result", result);
-	}
-	return result;
-}
+// 	let result: ListNode | null = null;
+// 	for (const x of sortedArr) {
+// 		result = new ListNode(x, result);
+// 		console.log("result", result);
+// 	}
+// 	return result;
+// }
 
-console.log(
-	deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(2))))
-);
+// console.log(
+// 	deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(2))))
+// );
 
 
 // var deleteDuplicates = function (head) {
