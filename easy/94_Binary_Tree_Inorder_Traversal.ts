@@ -1,3 +1,4 @@
+import { TreeNode } from '../node/class';
 // class TreeNode {
 //   val: number | null;
 //   left: TreeNode | null;
@@ -33,20 +34,6 @@
 //     new TreeNode(1, new TreeNode(null, new TreeNode(2, new TreeNode(3))))
 //   )
 // );
-class TreeNode {
-  val: number | null;
-  left: TreeNode | null;
-  right: TreeNode | null;
-  constructor(
-    val?: number | null,
-    left?: TreeNode | null,
-    right?: TreeNode | null
-  ) {
-    this.val = val === undefined ? null : val;
-    this.left = left === undefined ? null : left;
-    this.right = right === undefined ? null : right;
-  }
-}
 
 function inorderTraversal(root: TreeNode | null): number[] {
   let result: number[] = [];
@@ -79,7 +66,10 @@ function inorderTraversal(root: TreeNode | null): number[] {
       stack.push(current);
       current = current.left;
     }
+    console.log('koko:', current);
     current = stack.pop() as TreeNode;
+    console.log('ato', current);
+
     result.push(current.val as number);
     current = current.right;
   }
